@@ -16,4 +16,6 @@ public interface BookRepository extends JpaRepository<Book, UUID> {
     Page<Book> findAllByTitle(String title, PageRequest pageRequest);
     
     Page<Book> findAllByAuthor(String author, PageRequest pageRequest);
+    
+    boolean findByIsbn(String isbn);
 }
