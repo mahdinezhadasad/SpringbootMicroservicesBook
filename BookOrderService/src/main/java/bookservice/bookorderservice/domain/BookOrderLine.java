@@ -18,11 +18,11 @@ public class BookOrderLine extends BaseEntity {
     
     @Builder
     public BookOrderLine(UUID id, Long version, Timestamp createdDate, Timestamp lastModifiedDate,
-                         BookOrder bookOrder, UUID bookId, Integer orderQuantity,
+                         BookOrder bookOrder, String isbn, Integer orderQuantity,
                          Integer quantityAllocated) {
         super(id, version, createdDate, lastModifiedDate);
         this.bookOrder = bookOrder;
-        this.bookId = bookId;
+        this.Isbn = isbn;
         this.orderQuantity = orderQuantity;
         this.quantityAllocated = quantityAllocated;
     }
@@ -30,7 +30,7 @@ public class BookOrderLine extends BaseEntity {
     @ManyToOne
     private BookOrder bookOrder;
     
-    private UUID bookId;
+    private String Isbn;
     private Integer orderQuantity = 0;
     private Integer quantityAllocated = 0;
 }

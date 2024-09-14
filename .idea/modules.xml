@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BookInventoryService/BookInventoryService.iml" filepath="$PROJECT_DIR$/BookInventoryService/BookInventoryService.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/BookProjectSpringboot.iml" filepath="$PROJECT_DIR$/.idea/BookProjectSpringboot.iml" />
     </modules>
   </component>

@@ -1,6 +1,7 @@
 package bookservice.bookservice.Repositories;
 
 import bookservice.bookservice.domain.Book;
+import bookservice.bookservice.domain.BookDto;
 import bookservice.bookservice.mappers.BookGenreEnum;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,5 +18,5 @@ public interface BookRepository extends JpaRepository<Book, UUID> {
     
     Page<Book> findAllByAuthor(String author, PageRequest pageRequest);
     
-    boolean findByIsbn(String isbn);
+    Book findByIsbn(String isbn);
 }

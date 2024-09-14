@@ -9,6 +9,7 @@ import bookservice.bookservice.mappers.BookGenreEnum;
 import bookservice.bookservice.mappers.BookPagedList;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -46,11 +47,12 @@ public class BookServiceImpl implements BookService {
         return null;
     }
     
+    @Cacheable(cacheNames = "bookIsbnCache")
     @Override
     public BookDto getByIsbn(String isbn) {
-        return null;
+        return bookMapper.bookToBookDto (bookRepository.findByIsbn (isbn));
     }
-    
+    @Cacheable(cacheNames = "bookCache", condition = "#showInventoryOnHand == false")
     @Override
     public BookDto getById(UUID bookId, Boolean showInventoryOnHand) {
         if(showInventoryOnHand) {
@@ -63,7 +65,7 @@ public class BookServiceImpl implements BookService {
             return bookMapper.bookToBookDto ( bookRepository.findById (bookId).orElseThrow (NotFoundException::new));
         }
     }
-    
+    @Cacheable(cacheNames = "bookListCache", condition = "#showInventoryOnHand == false")
     @Override
     public BookPagedList listBooks(String bookTitle, String author, BookGenreEnum bookGenre, PageRequest of, Boolean showInventoryOnHand) {
         BookPagedList bookPagedList;

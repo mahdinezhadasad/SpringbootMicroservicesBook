@@ -8,12 +8,15 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by [your name] on [current date].
  */
-public class BookPagedList extends PageImpl<BookDto> {
+public class BookPagedList extends PageImpl<BookDto> implements Serializable {
+    
+    static final long serialVersionUID = -606358419839558194L;
     
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
     public BookPagedList(@JsonProperty("content") List<BookDto> content,

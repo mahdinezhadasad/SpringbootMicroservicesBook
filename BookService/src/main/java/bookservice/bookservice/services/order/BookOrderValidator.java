@@ -21,7 +21,7 @@ public class BookOrderValidator {
         AtomicInteger booksNotFound = new AtomicInteger();
         
         bookOrder.getBookOrderLines().forEach(orderline -> {
-            if (!bookRepository.findByIsbn (orderline.getIsbn ())) {
+            if (bookRepository.findByIsbn (orderline.getIsbn ()) !=null) {
                 booksNotFound.incrementAndGet();
             }
         });
