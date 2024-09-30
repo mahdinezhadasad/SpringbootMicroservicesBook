@@ -4,7 +4,7 @@
     <option name="USE_RELEASE_OPTION" value="false" />
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for BookInventoryService" enabled="true">
+      <profile name="Annotation profile for bookOrderService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -25,30 +25,28 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.8/lombok-1.18.8.jar" />
         </processorPath>
         <module name="bookOrderService" />
-        <module name="BookInventoryService" />
       </profile>
-      <profile name="Annotation profile for BookService" enabled="true">
+      <profile name="Annotation profile for BookInventoryService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.26/lombok-1.18.26.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.26/lombok-1.18.26.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar" />
         </processorPath>
         <module name="bookService" />
+        <module name="BookInventoryService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="22" />
   </component>
   <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="--add-opens jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED " />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="BookInventoryService" options="-parameters -Amapstruct.defaultComponentModel=spring" />
       <module name="bookOrderService" options="-parameters -Amapstruct.defaultComponentModel=spring" />
-      <module name="bookService" options="-parameters --add-opens jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-opens jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED -Amapstruct.defaultComponentModel=spring" />
+      <module name="bookService" options="-parameters -Amapstruct.defaultComponentModel=spring" />
     </option>
   </component>
 </project>

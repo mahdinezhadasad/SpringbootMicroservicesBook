@@ -20,6 +20,7 @@ public class BookInventoryController {
     
     private final BookInventoryRepository bookInventoryRepository;
     private final BookInventoryMapper bookInventoryMapper;
+
     
     @GetMapping("api/v1/book/{bookId}/inventory")
     List<BookInventoryDto> listBooksById(@PathVariable UUID bookId){

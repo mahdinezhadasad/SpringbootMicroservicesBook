@@ -2,15 +2,13 @@ package bookservice.bookinventoryservice.bootsrap;
 
 import bookservice.bookinventoryservice.domain.BookInventory;
 import bookservice.bookinventoryservice.repository.BookInventoryRepository;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
-@Slf4j
-@RequiredArgsConstructor
+
 @Component
 public class BookInventoryBootstrap implements CommandLineRunner {
     public static final String BOOK_1_ISBN = "978-3-16-148410-0";
@@ -21,6 +19,10 @@ public class BookInventoryBootstrap implements CommandLineRunner {
     public static final UUID BOOK_3_UUID = UUID.fromString("026cc3c8-3a0c-4083-a05b-e908048c1b08");
     
     private final BookInventoryRepository bookInventoryRepository;
+    
+    public BookInventoryBootstrap(BookInventoryRepository bookInventoryRepository) {
+        this.bookInventoryRepository = bookInventoryRepository;
+    }
     
     @Override
     public void run(String... args) throws Exception {
@@ -51,6 +53,6 @@ public class BookInventoryBootstrap implements CommandLineRunner {
                 .quantityOnHand(50)
                 .build());
         
-        log.debug("Loaded Inventory. Record count: " + bookInventoryRepository.count());
+       
     }
 }

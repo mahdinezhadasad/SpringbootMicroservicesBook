@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import java.sql.Timestamp;
 import java.util.UUID;
 
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -27,4 +28,12 @@ public class BookInventory extends BaseEntity {
     private UUID bookId;
     private String isbn;
     private Integer quantityOnHand = 0;
+    
+    public BookInventory(UUID bookId, String isbn, Integer quantityOnHand) {
+        super ();
+        this.bookId = bookId;
+        this.isbn = isbn;
+        this.quantityOnHand = quantityOnHand;
+    }
+    
 }

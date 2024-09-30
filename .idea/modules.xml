@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BookInventoryService/BookInventoryService.iml" filepath="$PROJECT_DIR$/BookInventoryService/BookInventoryService.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/BookProjectSpringboot.iml" filepath="$PROJECT_DIR$/.idea/BookProjectSpringboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BookService/bookService.iml" filepath="$PROJECT_DIR$/BookService/bookService.iml" />
     </modules>
   </component>
 </project>

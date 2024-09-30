@@ -1,12 +1,8 @@
 package bookservice.bookservice.services.inventory.model;
 
-import lombok.Setter;
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.context.annotation.Profile;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +22,7 @@ public class BookInventoryServiceRestTemplateImpl implements BookInventoryServic
     public static final String INVENTORY_PATH = "/api/v1/book/{bookId}/inventory";
     private final RestTemplate restTemplate;
     
-    @Setter
+    @Value("${sfg.bookstore.inventory-service-host}")
     private String bookInventoryServiceHost;
     
     public BookInventoryServiceRestTemplateImpl(RestTemplateBuilder restTemplateBuilder,
