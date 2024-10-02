@@ -1,5 +1,6 @@
 package bookservice.bookservice.domain;
 
+import bookservice.bookservice.Web.model.BookOrderStatusEnum;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -49,7 +50,7 @@ public class Book {
     
     @Column(unique = true)
     private String upc; // Universal Product Code (if applicable)
-    
+    private BookOrderStatusEnum orderStatus;
     private BigDecimal price;
     private Integer stockAvailable;
 }

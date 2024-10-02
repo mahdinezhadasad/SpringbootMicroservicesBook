@@ -26,7 +26,7 @@
         </processorPath>
         <module name="bookOrderService" />
       </profile>
-      <profile name="Annotation profile for BookInventoryService" enabled="true">
+      <profile name="Annotation profile for BookService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
