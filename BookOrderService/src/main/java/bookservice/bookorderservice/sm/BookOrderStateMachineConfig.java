@@ -2,7 +2,9 @@ package bookservice.bookorderservice.sm;
 
 import bookservice.bookorderservice.domain.BookOrderEventEnum;
 import bookservice.bookorderservice.domain.OrderStatusEnum;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.statemachine.action.Action;
 import org.springframework.statemachine.config.EnableStateMachineFactory;
 import org.springframework.statemachine.config.StateMachineConfigurerAdapter;
 import org.springframework.statemachine.config.builders.StateMachineStateConfigurer;
@@ -10,10 +12,12 @@ import org.springframework.statemachine.config.builders.StateMachineTransitionCo
 
 import java.util.EnumSet;
 
-
+@RequiredArgsConstructor
 @Configuration
 @EnableStateMachineFactory
 public class BookOrderStateMachineConfig extends StateMachineConfigurerAdapter<OrderStatusEnum,BookOrderEventEnum> {
+    
+    private final Action<OrderStatusEnum, BookOrderEventEnum> action;;
     
     
     @Override
@@ -33,6 +37,7 @@ public class BookOrderStateMachineConfig extends StateMachineConfigurerAdapter<O
         transitions.withExternal ()
                 .source (OrderStatusEnum.NEW).target (OrderStatusEnum.NEW
                 ).event (BookOrderEventEnum.VALIDATE_ORDER)
+                .action (action)
                 .and ().withExternal ()
                 .source (OrderStatusEnum.NEW).target (OrderStatusEnum.VALIDATED)
                 .event (BookOrderEventEnum.VALIDATION_PASSED)

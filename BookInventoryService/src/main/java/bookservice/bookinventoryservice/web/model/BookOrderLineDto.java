@@ -1,4 +1,4 @@
-package bookservice.bookservice.Web.model;
+package bookservice.bookinventoryservice.web.model;
 
 import lombok.Builder;
 import lombok.Data;
