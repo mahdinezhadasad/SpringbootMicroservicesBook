@@ -18,13 +18,14 @@ public class BookOrderLineDto extends BaseItem {
     
     @Builder
     public BookOrderLineDto(UUID id, Integer version, OffsetDateTime createdDate, OffsetDateTime lastModifiedDate,
-                            String isbn, String title, String author, Integer orderQuantity, BigDecimal price) {
+                            String isbn, String title, String author, Integer orderQuantity, BigDecimal price,Integer quantityAllocated) {
         super(id, version, createdDate, lastModifiedDate);
         this.isbn = isbn;
         this.title = title;
         this.author = author;
         this.orderQuantity = orderQuantity;
         this.price =  price;
+        this.quantityAllocated=quantityAllocated;
     }
     
     private String isbn;
@@ -32,5 +33,6 @@ public class BookOrderLineDto extends BaseItem {
     private String author;
     private Integer orderQuantity = 0;
     private BigDecimal price;
+    private Integer quantityAllocated;
     
 }

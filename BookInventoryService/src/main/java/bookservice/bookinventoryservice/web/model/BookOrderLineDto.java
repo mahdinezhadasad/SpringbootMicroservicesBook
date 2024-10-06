@@ -20,11 +20,11 @@ public class BookOrderLineDto extends BaseItem {
         this.isbn = isbn;
         this.bookTitle = bookTitle;
         this.bookId = bookId;
-        this.orderQuantity = orderQuantity;
+        this.orderQuantityAllocated = orderQuantity;
     }
     
     private String isbn;
     private String bookTitle;
     private UUID bookId;
-    private Integer orderQuantity = 0;
+    private Integer orderQuantityAllocated = 0;
 }

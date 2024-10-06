@@ -9,4 +9,6 @@ import java.util.UUID;
 public interface BookInventoryRepository extends JpaRepository<BookInventory, UUID> {
     
     List<BookInventory> findAllByBookId(UUID bookId);
+    
+    List<BookInventory> findAllByIsbn(String isbn);
 }
